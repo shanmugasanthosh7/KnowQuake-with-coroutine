@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sample.knowquake.ui.earthquakedetails.EarthquakeDetailsViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.earthquakes.EarthQuakeActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{viewModel.title}"
+                android:textSize="@dimen/detail_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="M 1.0 - 23km WNW of Searles Valley, CA" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sub_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{viewModel.timeDepth}"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:text="2019-11-16 06:39:15 AM | 8.4 km depth" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/review_status_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Review Status"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sub_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/review_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{viewModel.reviewStatus}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/review_status_title"
+                tools:text="AUTOMATIC" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/magnitude_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Magnitude"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/review_status" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/magnitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{viewModel.magnitude}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/magnitude_title"
+                tools:text="1.0 ml" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Type"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/magnitude" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{viewModel.type}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/type_title"
+                tools:text="earthquake" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,101 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.72'
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+    compileSdkVersion = 29
+
+    minSdkVersion = 21
+
+    targetSdkVersion = 29
+
+    versionCode = 1
+
+    versionName = "1.0.0"
+
+    //SupportLib
+    recyclerViewSupportLibVersion = '1.1.0'
+
+    cardSupportLibVersion = '1.0.0'
+
+    appcompatSupportLibVersion = '1.1.0'
+
+    browserVersion = '1.2.0'
+
+    materialVersion = "1.1.0"
+
+    work_version = '2.3.4'
+
+    //multidex
+    multiDexVersion = '2.0.1'
+
+    //retrofit
+    retrofitVersion = '2.9.0'
+
+    //ConstraintLayout
+    constraintLayoutVersion = '1.1.3'
+
+    //RxJava
+    rxJavaVersion = "3.0.4"
+
+    //RxAndroid
+    rxAndroid = "3.0.0"
+
+    //Dagger 2
+    dagger2Version = '2.27'
+
+    //Okhttp
+    okhttpVersion = '4.4.0'
+
+    //AAC
+    lifecycle_version = '2.2.0'
+    lifecycle_extension_version = '2.2.0'
+    lifecycle_livedata_version = '2.2.0'
+    lifecycle_rxstreams_version = '2.2.0'
+    lifecycle_core_testing = '2.1.0'
+
+    //Graph
+    graphVersion = "v3.1.0"
+
+    // Mockito
+    mockitoVersion = "2.28.2"
+
+    rulesVersion = '1.1.0-alpha1'
+    runnerVersion = '1.1.0-alpha1'
+    hamcrestVersion = '2.2'
+    espressoVersion = '3.1.0-alpha1'
+    junitVersion = '4.13'
+
+    // Memory leak
+    leakcanary = '2.3'
+    leakcanary_no_op = '1.6.3'
+    leakcanary_fragment_support = '1.6.3'
+    leakcanary_no_op_testing_on_remote = '1.6.3'
+    leakcanary_support_testing = '1.6.3'
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.sample.knowquake.ui.earthquakes.EarthQuakeViewModel"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.earthquakes.EarthQuakeActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tool_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/eq_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+                android:id="@+id/eq_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"/>
+
+        <LinearLayout
+                android:id="@+id/no_network_connection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="No Network. Please check your connection"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/retry"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/ic_launcher_background"
+                    android:text="retry"/>
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
